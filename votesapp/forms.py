@@ -19,11 +19,11 @@ class DetailsForm(forms.ModelForm):
         exclude = ['user']
         
 class PostForm(forms.ModelForm):
-    photo = ImageField(label='')
+    
 
     class Meta:
         model = Post
-        fields = ('photo', 'title', 'url', 'description', 'technologies',)
+        fields = ( 'title','photo', 'url', 'description', 'technologies',)
 
 
 class UpdateUserForm(forms.ModelForm):

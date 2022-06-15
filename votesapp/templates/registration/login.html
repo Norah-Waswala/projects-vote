@@ -2,16 +2,16 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<h2>Login Form</h2>
+<h2 style="text-align: center;">Login Form</h2>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
 <div class="panel panel-default">
-  <div class="panel-heading">Panel Heading</div>
-  <div class="panel-body">Panel Content</div>
-</div>
-<form action="/login/" method="POST">
+  <form action="/login/" method="POST">
     {% csrf_token %}
- 
-
-  <div class="container">
+  
+  <div class="panel-body">
+   
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
 
@@ -23,11 +23,40 @@
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
   </div>
-
+</div>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+</div>
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
+    
+  </div>
+  <div class="sign" style="text-align: center;">
+    <p>Haven't signed up?</p>
+    <a href="{% url 'register' %}"> Signup</a>
   </div>
 </form>
-
+</div>
+</div>
+<div class="col-md-3"></div>
+</div>
 {% endblock %}
+
+<form action="/login/" method="POST">
+  {% csrf_token %}
+
+
+<div class="container">
+  <label for="uname"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" name="username" required>
+
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="password" required>
+      
+  <button type="submit">Login</button>
+  <label>
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+  </label>
+</div>

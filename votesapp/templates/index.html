@@ -54,7 +54,7 @@
                     <div class="modal-body">
                         <form action="" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {{ form|crispy }}
+                            {{ posts_form|crispy }}
                             <input type="submit" class="btn btn-sm btn-info" value="Save"/>
                             <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close
                             </button>

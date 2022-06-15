@@ -8,6 +8,8 @@ Norah Waswala
 ![screen](/static/image/screen.png)
 ### Single Image
 ![screen](/static/image/screen1.png)
+### API 
+![screen](/static/image/screen1.png)
 ## User Story
   
 * A user can view posted projects and their details.  

@@ -80,7 +80,7 @@ def index(request):
 
 
 
-@login_required(login_url='login')
+
 def profile(request,username):
     
   

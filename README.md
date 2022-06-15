@@ -7,9 +7,9 @@ Norah Waswala
 ### Landing Page
 ![screen](/static/image/screen.png)
 ### Single Image
-![screen](/static/image/screen1.png)
+![screen](/static/images/rate.png)
 ### API 
-![screen](/static/image/screen1.png)
+![screen](/static/images/post.png)
 ## User Story
   
 * A user can view posted projects and their details.  

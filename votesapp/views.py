@@ -51,13 +51,13 @@ def index(request):
     
     if request.method=='POST':
         
-        # details_form = DetailsForm(request.POST, request.FILES)
+        details_form = DetailsForm(request.POST, request.FILES)
         posts_form = PostForm(request.POST, request.FILES)
         
-        # if details_form.is_valid():
-        #     profile = details_form.save(commit=False)
-        #     profile.user = current_user
-        #     profile.save()
+        if details_form.is_valid():
+            profile = details_form.save(commit=False)
+            profile.user = current_user
+            profile.save()
             
         if posts_form.is_valid():
             post = posts_form.save(commit=False)
@@ -67,10 +67,10 @@ def index(request):
         return redirect('index')
         
     else:
-        # details_form = DetailsForm
+        details_form = DetailsForm
         posts_form = PostForm
         
-    return render(request,'index.html', { 'posts_form':posts_form, 'posts':posts,})
+    return render(request,'index.html', { 'details_form':details_form,'posts_form':posts_form, 'posts':posts,})
 
 
 

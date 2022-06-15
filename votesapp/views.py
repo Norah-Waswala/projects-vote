@@ -5,7 +5,7 @@ from .forms import SignupForm, PostForm, DetailsForm,UpdateUserForm, UpdateUserP
 from rest_framework import viewsets
 from .models import Profile, Post, Rating
 from .serializers import ProfileSerializer, PostSerializer
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 import random
@@ -44,6 +44,10 @@ def register(request):
         new_user.save()
         return render (request,'registration/login.html')
     return render(request,'registration/signup.html')
+
+def signout(request):
+    logout(request)
+    return render(request,'index.html')
 
 def index(request):
     posts = Post.objects.all()

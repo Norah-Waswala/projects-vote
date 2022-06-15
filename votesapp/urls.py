@@ -10,6 +10,7 @@ urlpatterns = [
     
     path('login/',views.signin,name='login'),
     path('register/',views.register,name='register'),
+    path('logout/',views.signout,name='logout'),
     path('profile/',views.profile, name = 'profile'),
     path('<username>/profile', views.user_profile, name='userprofile'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),

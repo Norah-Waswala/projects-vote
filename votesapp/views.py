@@ -81,8 +81,8 @@ def index(request):
 
 
 @login_required(login_url='login')
-def profile(request, username):
-    posts = Post.objects.all()
+def profile(request):
+    
   
     return render(request, 'profile.html')
 

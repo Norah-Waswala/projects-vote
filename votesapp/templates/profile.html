@@ -34,7 +34,7 @@
            
            <div class="panel panel-default">
                 <div class="view overlay">
-                    <img style="width: 100%; height: 300px;" class="panel-img-top" src="{{ post.photo.cdn_url }}"
+                    <img style="width: 100%; height: 300px;" class="panel-img-top" src="{{ post.photo.url }}"
                          alt="{{photo.title}} ">
                     <a href="{% url 'project' post.title %}">
                         <div class="mask rgba-white-slight"></div>
@@ -47,7 +47,7 @@
                     <hr>
                     <p class="panel-text "><img src="{{post.user.profile.profile_picture.url}}"
                                                class="nav-img mr-2"
-                                               alt=""><a href="{% url 'profile' user.username %}" style="color: #2a2a2a;text-decoration: underline; font-style: italic;"> {{post.user.username|title}}</a>
+                                               alt=""><a href="{% url 'profile' request.user.username %}" style="color: #2a2a2a;text-decoration: underline; font-style: italic;"> {{post.user.username|title}}</a>
                        <span style="float:right">{{post.date|date}}</span>
 
 

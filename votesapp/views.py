@@ -49,9 +49,10 @@ def signout(request):
     logout(request)
     return render(request,'index.html')
 
+@login_required(login_url='login')
 def index(request):
     posts = Post.objects.all()
-    current_user = request.user 
+    current_user = request.user.username 
     
     if request.method=='POST':
         
@@ -82,19 +83,14 @@ def index(request):
 
 
 def profile(request,username):
-    
+   
+    user=User.objects.get(username=username)
+    posts=Post.objects.filter(user=user.id)
   
-    return render(request, 'profile.html')
+    return render(request, 'profile.html',{'posts':posts,'user':user})
 
 
-def user_profile(request, username):
-    user_prof = get_object_or_404(User, username=username)
-    if request.user == user_prof:
-        return redirect('profile', username=request.user.username)
-    params = {
-        'user_prof': user_prof,
-    }
-    return render(request, 'userprofile.html', params)
+
 
 
 @login_required(login_url='login')

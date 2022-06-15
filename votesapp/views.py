@@ -80,21 +80,21 @@ def index(request):
 
 
 
-# @login_required(login_url='login')
-# def profile(request):
+@login_required(login_url='login')
+def profile(request):
     
   
-#     return render(request, 'profile.html')
+    return render(request, 'profile.html')
 
 
-def user_profile(request, username):
-    user_prof = get_object_or_404(User, username=username)
-    if request.user == user_prof:
-        return redirect('profile', username=request.user.username)
-    params = {
-        'user_prof': user_prof,
-    }
-    return render(request, 'userprofile.html', params)
+# def user_profile(request, username):
+#     user_prof = get_object_or_404(User, username=username)
+#     if request.user == user_prof:
+#         return redirect('profile', username=request.user.username)
+#     params = {
+#         'user_prof': user_prof,
+#     }
+#     return render(request, 'userprofile.html', params)
 
 
 @login_required(login_url='login')

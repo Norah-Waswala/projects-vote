@@ -4,7 +4,7 @@
 </head>
 <body>
 <nav class="navbar navbar-default">
-    <div class="container">
+    <div class="container-nav" >
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
           <span class="icon-bar"></span>
@@ -12,14 +12,33 @@
           <span class="icon-bar"></span>
         </button>
        
-        <a class="navbar-brand" href="#">Norah</a>
+        <a class="navbar-brand" href="#">Rate-It</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          
-          <li><a href="#">Login</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
           <li><a href="#">Subscribe</a></li>
           <li><a href="#">Explore</a></li>
+          
+          {% if user.is_authenticated%}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"> <img class="rounded-circle nav-img" 
+                                                                            src="{{ user.profile.profile_picture.url }}"
+                                                                            alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item text-center" href="{% url 'profile' user.username %}">Profile</a>
+                        <hr>
+                        <a class="dropdown-item text-center" href="{% url 'edit' user.username  %}"> Edit profile</a>
+                        <hr>
+                        <a href="" class="text-secondary text-center dropdown-item">Log Out</a>
+
+                   {%endif%}
+                    </div>
+          
         </ul>
        
       </div>

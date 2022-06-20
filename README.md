@@ -5,9 +5,8 @@ Norah Waswala
  An application that will allow a user to post a project he/she has created and get it reviewed by his/her peers.A project can be rated based on 3 different criteria: Design, Usability,Content
 ## Demo
 ### Landing Page
-![screen](/static/image/screen.png)
-### Single Image
-![screen](/static/images/rate.png)
+![screenshot](/static/images/rate.png)
+
 ### API 
 ![screen](/static/images/post.png)
 ## User Story
